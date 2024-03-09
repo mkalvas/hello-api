@@ -2,17 +2,19 @@
 
 Super simple hello world API for experimenting, testing, or debugging.
 
-## Build
+## Developing
+
+Use the convenience script for rebuilding and restarting the development server on source file changes.
 
 ```sh
-# in repo root
-docker build -t hello-api .
+./scripts/dev.sh
 ```
 
-## Deploy
+## Deploying
 
-To deploy to a kubernetes cluster, apply the manifests.
+Connect to the target cluster via `kubectl` and run the deploy script.
 
 ```sh
-kubectl apply -f k8s
+./scripts/build.sh
+./scripts/deploy.sh
 ```

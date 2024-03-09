@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: hello-api
-          image: hello-api:v1
+          image: hello-api:latest
           resources:
             limits:
               memory: "128Mi"

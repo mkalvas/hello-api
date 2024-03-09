@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: hello-api
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: hello-api
   ports:

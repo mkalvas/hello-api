@@ -3,7 +3,8 @@ use axum::{routing::get, Router};
 #[tokio::main]
 async fn main() {
     let app = Router::new().route("/", get(hello));
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    let host = std::env::var("HELLO_API_HOST").unwrap_or("127.0.0.1".into());
+    let listener = tokio::net::TcpListener::bind(format!("{host}:3000")).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 
