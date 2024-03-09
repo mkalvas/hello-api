@@ -11,7 +11,7 @@ kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 envsubst < k8s/ingress.yaml | kubectl apply -f -
 
-VERSION=$(git rev-parse --short head)
+VERSION=$(git rev-parse --short HEAD)
 kubectl set image deployments/hello-api-deployment hello-api=hello-api:$VERSION
 
 if [[ -n "$force" ]]; then
