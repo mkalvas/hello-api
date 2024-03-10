@@ -1,0 +1,8 @@
+networks:
+  default:
+    name: mk-net
+    external: true
+services:
+  hello-api:
+    container_name: hello-api
+    build: .

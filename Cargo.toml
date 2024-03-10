@@ -7,5 +7,5 @@ edition = "2021"
 strip = true
 
 [dependencies]
-axum = "0.7.4"
+axum = { version = "0.7.4" }
 tokio = { version = "1.29.1", features = ["full"] }

@@ -2,19 +2,9 @@
 
 Super simple hello world API for experimenting, testing, or debugging.
 
-## Developing
+## Scripts for all
 
-Use the convenience script for rebuilding and restarting the development server on source file changes.
-
-```sh
-./scripts/dev.sh
-```
-
-## Deploying
-
-Connect to the target cluster via `kubectl` and run the deploy script.
-
-```sh
-./scripts/build.sh
-./scripts/deploy.sh
-```
+- `dev` watches for source changes, recompiles, and runs out of docker
+- `test` runs tests
+- `local` runs the api in local docker compose for testing
+- `deploy` deploys the api to docker compose in production

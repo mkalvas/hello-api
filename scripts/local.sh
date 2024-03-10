@@ -8,7 +8,7 @@ while (( $# )); do
 done
 
 if [[ -n "$down" ]]; then
-  docker --context mk-prod compose down
+  docker compose down
 else
-  docker --context mk-prod compose up -d
+  docker compose up -d
 fi
