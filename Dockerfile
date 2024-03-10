@@ -1,11 +1,14 @@
 FROM rust:slim as builder
-COPY . /app
+RUN --mount=type=cache,target=/var/cache/apt \
+    apt-get update && apt-get install pkg-config libssl-dev -y
+COPY ./Cargo.lock ./Cargo.toml /app/
+COPY ./src /app/src/
 WORKDIR /app
-RUN apt-get update && apt-get install pkg-config libssl-dev -y
 RUN cargo build --release
 
 # Strip final image to bare necessities
 FROM gcr.io/distroless/cc-debian12
+ENV HELLO_API_HOST=0.0.0.0
 COPY --from=builder /app/target/release/hello-api /
 
 CMD ["./hello-api"]

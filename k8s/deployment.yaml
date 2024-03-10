@@ -17,6 +17,7 @@ spec:
       containers:
         - name: hello-api
           image: hello-api:latest
+          imagePullPolicy: IfNotPresent
           resources:
             limits:
               memory: "128Mi"
