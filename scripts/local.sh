@@ -10,5 +10,5 @@ done
 if [[ -n "$down" ]]; then
   docker compose down
 else
-  docker compose up -d
+  docker compose up --build -d
 fi
