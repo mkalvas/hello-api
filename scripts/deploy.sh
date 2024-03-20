@@ -10,5 +10,5 @@ done
 if [[ -n "$down" ]]; then
   docker --context mk-prod compose down
 else
-  docker --context mk-prod compose up -d
+  docker --context mk-prod compose up --build -d
 fi
