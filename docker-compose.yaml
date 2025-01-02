@@ -5,4 +5,5 @@ networks:
 services:
   hello-api:
     container_name: hello-api
+    restart: always
     build: .
